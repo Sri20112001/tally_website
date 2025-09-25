@@ -1,0 +1,107 @@
+.stats-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 80px;
+  width: 100%;
+  position: relative;
+}
+
+/* Wrapper for each white + blue pair */
+.white-wrapper {
+  position: relative;
+  width: 300px;
+  aspect-ratio: 1 / 1;
+}
+
+/* Stat box base style */
+.stat-box {
+  width: 100%;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Colors */
+.white-box {
+  background-color: #ffffff;
+  color: #000000;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  z-index: 2;
+}
+
+.blue-box {
+  background-color: #2e5c9a;
+  color: #ffffff;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: absolute;
+  z-index: 2;
+}
+
+/* Overlap positions for desktop */
+.overlap-right {
+  bottom: 16px;
+  right: -200px;
+}
+
+.overlap-left {
+  bottom: 16px;
+  left: -200px;
+}
+
+/* Text styles */
+.stat-number {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* 📱 Mobile responsive behavior */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column; /* stack vertically */
+    gap: 40px; /* tighter spacing */
+    padding: 20px;
+  }
+
+  .white-wrapper {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: auto; /* allow auto height */
+  }
+
+  /* Blue box now appears directly under the white box instead of overlapping */
+  .blue-box {
+    position: static;
+    width: 100%;
+    aspect-ratio: auto;
+    margin-top: 10px;
+  }
+
+  /* Remove overlapping styles on small screens */
+  .overlap-left,
+  .overlap-right {
+    bottom: auto;
+    left: auto;
+    right: auto;
+  }
+}
