@@ -1,5 +1,6 @@
 import { MoveLeft, MoveRight } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const data = [
   {
@@ -42,28 +43,19 @@ const data = [
 
 const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [slideDirection, setSlideDirection] = useState("");
 
   const nextReview = () => {
-    setSlideDirection("slide-up");
-    setTimeout(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
-      setSlideDirection("");
-    }, 500);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
   };
 
   const prevReview = () => {
-    setSlideDirection("slide-down");
-    setTimeout(() => {
-      setCurrentIndex(
-        (prevIndex) => (prevIndex - 1 + data.length) % data.length
-      );
-      setSlideDirection("");
-    }, 500);
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + data.length) % data.length
+    );
   };
 
   return (
-    <section className="px-4 sm:px-6 lg:px-8">
+    <section className="px-4 sm:px-6 lg:px-8 my-16">
       <div className="max-w-8xl mx-auto">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 mb-4">
           Client Testimonials
@@ -73,36 +65,33 @@ const Testimonial = () => {
         </p>
 
         <div className="relative overflow-hidden">
-          <div
-            className={`transition-all duration-500 ease-in-out ${
-              slideDirection === "slide-up"
-                ? "-translate-y-12 opacity-0"
-                : slideDirection === "slide-down"
-                ? "translate-y-12 opacity-0"
-                : "translate-y-0 opacity-100"
-            }`}
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 0.7 }}
+            className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-xl px-6 sm:px-10 py-10 sm:py-14 w-full max-w-4xl mx-auto border-l-4 border-blue-500"
           >
-            <div className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-xl px-6 sm:px-10 py-10 sm:py-14 w-full max-w-4xl mx-auto border-l-4 border-blue-500">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-                <div className="w-14 sm:w-22 aspect-square rounded-full bg-blue-200 flex items-center justify-center  text-gray-800 font-bold text-lg sm:text-xl">
-                  {data[currentIndex].author[0]}
-                </div>
-                <div>
-                  <p className="text-gray-800 text-sm sm:text-base md:text-lg italic mb-4">
-                    "{data[currentIndex].review}"
-                  </p>
-                  <p className="text-gray-900 font-semibold text-base sm:text-xl">
-                    {data[currentIndex].author}
-                  </p>
-                  <p className="text-gray-600 text-xs sm:text-sm">
-                    {data[currentIndex].posting}
-                  </p>
-                </div>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+              <div className="w-14 sm:w-22 aspect-square rounded-full bg-blue-200 flex items-center justify-center text-gray-800 font-bold text-lg sm:text-xl">
+                {data[currentIndex].author[0]}
+              </div>
+              <div>
+                <p className="text-gray-800 text-sm sm:text-base md:text-lg italic mb-4">
+                  "{data[currentIndex].review}"
+                </p>
+                <p className="text-gray-900 font-semibold text-base sm:text-xl">
+                  {data[currentIndex].author}
+                </p>
+                <p className="text-gray-600 text-xs sm:text-sm">
+                  {data[currentIndex].posting}
+                </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="flex justify-between items-center gap-6 m-8">
+          <div className="flex justify-between items-center gap-6 mt-8  p-3 max-w-4xl mx-auto">
             <button
               onClick={prevReview}
               className="rounded-full border border-blue-400 p-3 sm:p-4 text-blue-600 bg-white shadow-md hover:bg-blue-50 hover:shadow-lg transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"

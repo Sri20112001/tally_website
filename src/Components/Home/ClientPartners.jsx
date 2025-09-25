@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const data = [
   "https://yennes.com/wp-content/uploads/2023/11/Tally-logo-3-300x121-1.png",
   "https://yennes.com/wp-content/uploads/2023/12/Biz.jpg",
@@ -14,18 +16,24 @@ const ClientPartners = () => {
         <h1 className="text-4xl font-extrabold text-center text-gray-900 mb-12">
           Our Client Partners
         </h1>
+
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
           {data.map((src, index) => (
-            <div
+            <motion.div
               key={index}
-              className="relative group flex justify-center items-center p-4 bg-gray-50 rounded-lg shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1"
+              className="relative group flex justify-center items-center p-4 bg-gray-50 rounded-lg shadow-sm"
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.7, delay: index * 0.15, ease: "easeOut" }}
+              whileHover={{ scale: 1.08, boxShadow: "0px 8px 20px rgba(0,0,0,0.15)" }}
             >
               <img
                 src={src}
                 alt={`Client partner ${index + 1}`}
-                className="h-32 max-h-32 object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-32 max-h-32 object-contain transition-transform duration-300"
               />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
