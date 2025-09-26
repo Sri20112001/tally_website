@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const data = [
   {
     review:
-      "YENNES has a strong support team. We never face downtime while at work in Tally, and it helps in generating MIS Reports like Sales, Purchase, O/S management, Debtor / Stock Ageing.",
+      "GV Enterprises has a strong support team. We never face downtime while at work in Tally, and it helps in generating MIS Reports like Sales, Purchase, O/S management, Debtor / Stock Ageing.",
     author: "John Doe",
     posting: "Business Analyst",
   },
@@ -35,7 +35,7 @@ const data = [
   },
   {
     review:
-      "YENNES has made managing our accounts stress-free. The MIS reports are clear and easy to understand.",
+      "GV Enterprises has made managing our accounts stress-free. The MIS reports are clear and easy to understand.",
     author: "Anita Sharma",
     posting: "Senior Accountant",
   },

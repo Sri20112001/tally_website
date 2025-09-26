@@ -7,28 +7,28 @@ const data = [
         icon: "https://yennes.com/wp-content/uploads/2023/03/home5-feature3-icon.png",
         title: "Implementation",
         description:
-            "The approach is simple – capture and address all implicit needs of customers. Industry specific best practices and an implementation methodology perfected over the years ensures rapid, risk-free, and successful implementation from YENNES.",
+            "The approach is simple – capture and address all implicit needs of customers. Industry specific best practices and an implementation methodology perfected over the years ensures rapid, risk-free, and successful implementation from GV Enterprises.",
     },
     {
         src: "https://yennes.com/wp-content/uploads/2023/12/2-1024x576.jpg",
         icon: "https://yennes.com/wp-content/uploads/2023/03/home5-feature2-icon.png",
         title: "Customization & Enchancement",
         description:
-            "While customization is generally viewed as part of implementation, YENNES looks at it differently. The customization should not only address the current business needs, but should also be able to take care of the medium term future needs. ",
+            "While customization is generally viewed as part of implementation, GV Enterprises looks at it differently. The customization should not only address the current business needs, but should also be able to take care of the medium term future needs. ",
     },
     {
         src: "https://yennes.com/wp-content/uploads/2023/12/3-1024x576.jpg",
         icon: "https://yennes.com/wp-content/uploads/2023/03/home5-feature3-icon.png",
         title: "Support & Maintenance",
         description:
-            "The YENNES AMC comes with an inbuilt promise of training new users in case of transition at the customer end. This ensures minimal disruption during transition and is just one example of the value addition that YENNES can bring to a relationship.",
+            "The GV Enterprises AMC comes with an inbuilt promise of training new users in case of transition at the customer end. This ensures minimal disruption during transition and is just one example of the value addition that GV Enterprises can bring to a relationship.",
     },
     {
         src: "https://yennes.com/wp-content/uploads/2023/12/5-1024x576.jpg",
         icon: "https://yennes.com/wp-content/uploads/2023/03/home5-feature2-icon.png",
         title: "Reimplementation",
         description:
-            "YENNES has a well defined process for re-implementation as such an exercise needs a participative approach given that the organization that goes in for re-implementation now has experience as an additional resource – the YENNES methodology incorporates this aspect into the process for success.",
+            "GV Enterprises has a well defined process for re-implementation as such an exercise needs a participative approach given that the organization that goes in for re-implementation now has experience as an additional resource – the GV Enterprises methodology incorporates this aspect into the process for success.",
     },
 ];
 

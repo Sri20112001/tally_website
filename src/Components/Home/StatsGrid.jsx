@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import StatNumber from "../StatNumber";
 
 const stats = [
   { number: "30+", label: "Vertical Solutions", blue: false },
@@ -28,7 +29,11 @@ const StatsGrid = () => {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.7, delay: index * 0.2, ease: "easeOut" }}
+              transition={{
+                duration: 0.7,
+                delay: index * 0.2,
+                ease: "easeOut",
+              }}
             >
               {/* Shining Effect */}
               <div className="absolute inset-0 overflow-hidden rounded-2xl">
@@ -36,7 +41,7 @@ const StatsGrid = () => {
               </div>
 
               <div className="relative z-10">
-                <h3 className="text-4xl font-extrabold mb-2">{stat.number}</h3>
+                <StatNumber number={stat.number} />
                 <p className="text-lg font-medium">{stat.label}</p>
               </div>
 

@@ -6,6 +6,9 @@ import Home from "./Pages/Home/Home";
 import Products from "./Pages/Products/Products";
 import Service from "./Pages/Services/Service";
 import Solutions from "./Pages/Solutions/Solutions";
+import Contacts from "./Pages/Contacts/Contacts";
+import Addons from "./Pages/Addons/Addons";
+import PageNotFound from "./Pages/PageNotFound/PageNotFound";
 
 const router = createBrowserRouter([
     {
@@ -24,6 +27,19 @@ const router = createBrowserRouter([
         path: "/our-solutions",
         element: <Solutions />,
     },
+    {
+        path: "/contact",
+        element: <Contacts />,
+    },
+    {
+        path: "/addons",
+        element: <Addons />,
+    },
+    {
+        path: "/*",
+        element: <PageNotFound />,
+    },
+    
 ]);
 
 createRoot(document.getElementById("root")).render(

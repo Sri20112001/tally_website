@@ -14,7 +14,7 @@ const Intro = () => {
                 >
                     <p className="text-3xl md:text-6xl font-bold leading-tight">Your Most Trusted Tally Partner.</p>
                     <p className="text-lg md:text-3xl text-gray-700">
-                        YENNES has expertise around all Tally products and has been selling, implementing, customizing,
+                        GV Enterprises has expertise around all Tally products and has been selling, implementing, customizing,
                         and supporting customers all over India for more than 3 decades.
                     </p>
                     {/* 🔹 Marquee */}
