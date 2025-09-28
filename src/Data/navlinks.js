@@ -11,10 +11,10 @@ const navlinks = [
             //     label: "Tally Products",
             //     href: "/our-products",
             // },
-            {
-                label: "Downloads",
-                href: "/downloads",
-            },
+            // {
+            //     label: "Downloads",
+            //     href: "/downloads",
+            // },
         ],
     },
     {
@@ -25,10 +25,10 @@ const navlinks = [
         label: "Solutions",
         href: "/our-solutions",
         menu: [
-            {
-                label: "Vertical Solutions",
-                href: "/vertical-solutions",
-            },
+            // {
+            //     label: "Vertical Solutions",
+            //     href: "/vertical-solutions",
+            // },
             {
                 label: "Addons",
                 href: "/addons",
@@ -46,12 +46,12 @@ const navlinks = [
     {
         label: "About Us",
         href: "/about-us",
-        menu: [
-            {
-                label: "Awards",
-                href: "/awards",
-            },
-        ],
+        // menu: [
+        //     {
+        //         label: "Awards",
+        //         href: "/awards",
+        //     },
+        // ],
     },
 ];
 

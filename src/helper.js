@@ -1,0 +1,2 @@
+export const addressLink =
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.934792390826!2d80.22185038538296!3d12.976022482153937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d1b07f400c1%3A0xd3508019a8db180d!2sGV%20Enterprises!5e0!3m2!1sen!2sin!4v1758902831600!5m2!1sen!2sin";

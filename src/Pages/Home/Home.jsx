@@ -8,19 +8,17 @@ import Testimonial from "../../Components/Home/Testimonial";
 import Layout from "../../Layout";
 
 const Home = () => {
-  return (
-    <Layout>
-      <section className="">
-        <Intro />
-        <CertifiedPartner />
-        <CoreService />
-        <StatsGrid />
-        <IndustrySolutions />
-        <ClientPartners/>
-        <Testimonial/>
-      </section>
-    </Layout>
-  );
+    return (
+        <Layout>
+            <Intro />
+            <CertifiedPartner />
+            <CoreService />
+            <StatsGrid />
+            <IndustrySolutions />
+            <ClientPartners />
+            <Testimonial />
+        </Layout>
+    );
 };
 
 export default Home;

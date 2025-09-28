@@ -9,6 +9,7 @@ import Solutions from "./Pages/Solutions/Solutions";
 import Contacts from "./Pages/Contacts/Contacts";
 import Addons from "./Pages/Addons/Addons";
 import PageNotFound from "./Pages/PageNotFound/PageNotFound";
+import AboutUs from "./Pages/AboutUs/AboutUs";
 
 const router = createBrowserRouter([
     {
@@ -36,9 +37,14 @@ const router = createBrowserRouter([
         element: <Addons />,
     },
     {
+        path: "/about-us",
+        element: <AboutUs/>
+    },
+    {
         path: "/*",
         element: <PageNotFound />,
     },
+    
     
 ]);
 

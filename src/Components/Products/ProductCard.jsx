@@ -33,42 +33,42 @@ const ProductCard = ({ label, title, description, src, reverse }) => {
 
   return (
     <motion.div
-      className={`flex flex-col lg:flex-row items-center justify-between gap-12 bg-gradient-to-br from-white to-gray-50 p-8 ${
+      className={`flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16 bg-gradient-to-br from-white to-gray-50 p-6 md:p-10 rounded-2xl shadow ${
         reverse ? "lg:flex-row-reverse" : ""
       }`}
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.2 }} // triggers on scroll, 20% visible
+      viewport={{ once: false, amount: 0.2 }}
     >
       {/* Image Section */}
       <motion.div
-        className="relative w-full lg:w-1/2 h-full rounded-2xl"
+        className="relative w-full lg:w-1/2 flex justify-center"
         variants={imageVariants}
       >
         <img
           src={src}
           alt={label}
-          className="w-64 sm:w-[450px] aspect-video object-contain rounded-2xl"
+          className="w-full max-w-[320px] sm:max-w-[500px] lg:max-w-[600px] aspect-video object-contain rounded-xl"
         />
       </motion.div>
 
       {/* Content Section */}
       <motion.div
-        className={`flex flex-col items-start gap-6 w-full lg:w-1/2 ${
-          reverse ? "lg:items-end" : ""
+        className={`flex flex-col gap-4 w-full lg:w-1/2 text-center lg:text-left ${
+          reverse ? "lg:text-right lg:items-end" : ""
         }`}
         variants={contentVariants}
       >
-        <p className="text-indigo-600 font-medium text-xl md:text-4xl uppercase tracking-widest">
+        <p className="text-indigo-600 font-semibold text-lg sm:text-xl md:text-2xl uppercase tracking-widest">
           {label}
         </p>
         {title && (
-          <h2 className="text-xl lg:text-2xl font-semibold text-gray-900 leading-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 leading-snug">
             {title}
           </h2>
         )}
-        <p className="text-gray-700 leading-loose text-sm lg:text-lg">
+        <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
           {description}
         </p>
       </motion.div>

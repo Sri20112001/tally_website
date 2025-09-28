@@ -1,3 +1,4 @@
+import {motion} from "framer-motion";
 import {MapPinned, Phone, Mail} from "lucide-react";
 import Layout from "./../../Layout";
 import ContactItem from "../../Components/Contacts/ContactItem";
@@ -6,7 +7,15 @@ const contactData = [
     {
         icon: MapPinned,
         title: "Head Office",
-        value: "Plot No 32, G1, 3rd Cross Street, Velacheri, Chennai - 600042 (Near CDS Flats, Anna Nagar Extension)",
+        type: "address",
+        address: {
+            doorNo: "Plot No 32, G1",
+            street: "3rd Cross Street",
+            area: "Velachery",
+            landmark: "Near CDS Flats, Anna Nagar Extension",
+            city: "Chennai",
+            pincode: "600042",
+        },
         color: "text-blue-600",
     },
     {
@@ -29,63 +38,82 @@ const Contacts = () => {
     return (
         <Layout>
             {/* Header */}
-            <section className="flex items-center justify-center bg-gradient-to-r from-blue-600 to-indigo-700 text-white h-[30vh]">
-                <h1 className="text-4xl md:text-5xl font-bold">Contact Us</h1>
-            </section>
+            <div className="flex items-center justify-center bg-gradient-to-r from-blue-600 to-indigo-700 text-white h-[30vh] py-8 md:py-16 px-4 md:px-12 ">
+                <motion.h1
+                    className="text-4xl md:text-5xl font-bold"
+                    initial={{opacity: 0, y: -50}}
+                    animate={{opacity: 1, y: 0}}
+                    transition={{duration: 0.8, ease: "easeOut"}}
+                >
+                    Contact Us
+                </motion.h1>
+            </div>
 
             {/* Content */}
-            <section className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto px-6 py-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto px-6 py-18">
                 {/* Left section */}
-                <div className="col-span-2 space-y-6">
-                    <h2 className="text-4xl font-semibold text-gray-800">Stay Connected</h2>
-                    <p className="text-xl text-gray-600">
+                <motion.div
+                    className="col-span-2 space-y-6"
+                    initial={{opacity: 0}}
+                    whileInView={{opacity: 1}}
+                    viewport={{once: true, amount: 0.2}}
+                    transition={{duration: 0.8}}
+                >
+                    <motion.h2
+                        className="text-4xl font-semibold text-gray-800"
+                        initial={{opacity: 0, y: -20}}
+                        whileInView={{opacity: 1, y: 0}}
+                        viewport={{once: false, amount: 0.2}}
+                        transition={{duration: 0.6}}
+                    >
+                        Stay Connected
+                    </motion.h2>
+                    <motion.p
+                        className="text-xl text-gray-600"
+                        initial={{opacity: 0, y: -20}}
+                        whileInView={{opacity: 1, y: 0}}
+                        viewport={{once: false, amount: 0.2}}
+                        transition={{duration: 0.6, delay: 0.1}}
+                    >
                         We’d love to hear from you. Reach out to us through any of the following ways.
-                    </p>
+                    </motion.p>
 
                     <div className="space-y-6">
-                        {contactData.map((item) => (
-                            <ContactItem
+                        {contactData.map((item, index) => (
+                            <motion.div
                                 key={item.title}
-                                type={item.type}
-                                icon={item.icon}
-                                title={item.title}
-                                value={item.value}
-                                color={item.color}
-                            />
+                                initial={{opacity: 0, x: index % 2 === 0 ? -50 : 50}}
+                                whileInView={{opacity: 1, x: 0}}
+                                viewport={{once: true, amount: 0.2}}
+                                transition={{duration: 0.6, delay: index * 0.15}}
+                            >
+                                <ContactItem
+                                    type={item.type}
+                                    icon={item.icon}
+                                    title={item.title}
+                                    value={item.value}
+                                    address={item.address}
+                                    color={item.color}
+                                />
+                            </motion.div>
                         ))}
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Right section (Contact Form / Queries) */}
-                {/* <div className="bg-white shadow-lg rounded-2xl p-6 border border-gray-100">
-                    <h2 className="text-xl font-semibold mb-4 text-gray-800">For Queries Reach Us</h2>
-                    <form className="space-y-4">
-                        <input
-                            type="text"
-                            placeholder="Your Name"
-                            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                        />
-                        <input
-                            type="email"
-                            placeholder="Your Email"
-                            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                        />
-                        <textarea
-                            placeholder="Your Message"
-                            rows="4"
-                            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                        ></textarea>
-                        <button
-                            type="submit"
-                            className="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition-all"
-                        >
-                            Send Message
-                        </button>
-                    </form>
-                </div> */}
-            </section>
-
-            <section className=""></section>
+                {/* <motion.div
+          className="bg-white shadow-lg rounded-2xl p-6 border border-gray-100"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-xl font-semibold mb-4 text-gray-800">For Queries Reach Us</h2>
+          <form className="space-y-4">
+            ...
+          </form>
+        </motion.div> */}
+            </div>
         </Layout>
     );
 };

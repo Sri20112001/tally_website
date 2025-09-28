@@ -55,8 +55,8 @@ const Testimonial = () => {
   };
 
   return (
-    <section className="px-4 sm:px-6 lg:px-8 my-16">
-      <div className="max-w-8xl mx-auto">
+    <div className="px-4 sm:px-6 md:px-8 md:py-16">
+      <div className="md:max-w-8xl md:mx-auto">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 mb-4">
           Client Testimonials
         </h1>
@@ -71,7 +71,7 @@ const Testimonial = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             transition={{ duration: 0.7 }}
-            className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-xl px-6 sm:px-10 py-10 sm:py-14 w-full max-w-4xl mx-auto border-l-4 border-blue-500"
+            className="bg-gradient-to-br from-white to-blue-50 md:rounded-2xl shadow-xl px-4 md:px-6 sm:px-4 py-10 sm:py-14 w-full max-w-4xl mx-auto border-l-4 border-blue-500"
           >
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
               <div className="w-14 sm:w-22 aspect-square rounded-full bg-blue-200 flex items-center justify-center text-gray-800 font-bold text-lg sm:text-xl">
@@ -108,7 +108,7 @@ const Testimonial = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
